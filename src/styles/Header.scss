@@ -1,0 +1,31 @@
+.Header{
+
+    $hover-color: #E2F063;
+
+    display: flex;
+    justify-content: space-between;
+    margin: 0 60px;
+    padding: 40px 0;
+
+    &-links{
+        display: flex;
+        gap: 40px;
+        font-size: x-large;
+
+    }
+
+    &-link{
+        text-decoration: none;
+        color: white;
+        font-weight: 300;
+    }
+
+    &-link:hover{
+        color: $hover-color;
+        transition: color 0.3s ease-in-out;
+    }
+
+    &-logo{
+        cursor: pointer;
+    }
+}
