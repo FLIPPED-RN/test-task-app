@@ -1,8 +1,10 @@
 {
   "name": "test-task-app",
   "version": "0.1.0",
+  "proxy": "https://swapi.dev",
   "private": true,
   "dependencies": {
+    "@tanstack/react-query": "^5.80.7",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",

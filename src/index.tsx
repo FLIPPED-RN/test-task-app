@@ -7,20 +7,27 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Form from "./pages/Form";
 import Starships from "./pages/Starships";
 import Header from "./components/Header";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import StarshipDetail from "./pages/StarshipDetail";
+
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="form" element={<Form />} />
-        <Route path="starships" element={<Starships />} />
-      </Routes>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="form" element={<Form />} />
+          <Route path="starships" element={<Starships />} />
+          <Route path="starships/:id" element={<StarshipDetail />} />
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 
